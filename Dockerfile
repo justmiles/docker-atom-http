@@ -42,8 +42,8 @@ RUN URL='https://atom.io/download/deb' && \
   find /usr/lib -type f -name "libxcb.so.1*" -exec cp {} /usr/share/atom/libxcb.so.1 \; && \
   sed -i 's/BIG-REQUESTS/_IG-REQUESTS/' /usr/share/atom/libxcb.so.1
 
-COPY resources/firstrun.sh /etc/my_init.d/firstrun.sh
-COPY resources/startapp.sh /startapp.sh
+COPY files/firstrun.sh /etc/my_init.d/firstrun.sh
+COPY files/startapp.sh /startapp.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
 
 VOLUME /.atom
