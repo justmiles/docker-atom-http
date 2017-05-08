@@ -29,8 +29,7 @@ To use this, execute `atom-http <path to workspace>`
 function atom-http {
   workspace=${1:-"$PWD"}
   port=${2:-"8081"}
-  docker rm -f atom-http || true
-  docker run -d --rm \
+  docker run --rm \
     -p $port:8080 \
     -v $HOME/.atom:/.atom \
     -v $(realpath $workspace):/workspace \
